@@ -209,7 +209,7 @@ dic = {
   }
 }
 
-rint((lambda x: sum([i["details"]["amount"] for i in x["user_002"]["transactions"]]))(dic))
+print((lambda x: sum([i["details"]["amount"] for i in x["user_002"]["transactions"]]))(dic))
 
 #Task 7
 print((lambda x: [True if i>0 else i for i in x])([-1, 9, 28, -3, 0, 1]))
