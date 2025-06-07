@@ -105,16 +105,18 @@ listS = [
 ]
 
 #print((lambda x: [''.join(k.upper() if k==x else k for k in list(i)) for i in listS])("pp"))
-print((lambda x, y: [i.upper() for i in x if i.lower()==y.lower()])("IdkWhAt", "d"))
+print((lambda x, y: ''.join([x.split(y)[i]+y.upper() if i!=len(x.split(y))-1 else x.split(y)[i] for i in range(len(x.split(y)))]))("IddKiddwhad", 'dd'))
+
+
 
 #Task 4
 print(sorted(list1, reverse=True))
-print(list(map(str, sorted(sorted(list1, reverse=True), key=list1.count, reverse=True))))
+print(sorted(sorted(list1, reverse=True), key=list1.count, reverse=True))
 
 #Task 5
 list1 = [1, 2, 3, 4, 5, 6]
 list2 = [-1, 9, 28, -3, 0, 1]
-print((lambda x, y: [i for i in x+y] if len(list1+list2)>7 else None)(list1, list2))
+print((lambda x, y: x+y if len(x+y)>7 else None)(list1, list2))
 
 #Task 6
 dic = {
