@@ -1,5 +1,5 @@
 def skip():
-    print(''.join(("-"*100 + "\n") for i in range(7)))
+  print(''.join(("-"*100 + "\n") for i in range(7)))
 #Elementary level
 #Task 1
 
@@ -77,7 +77,7 @@ skip()
 #Task 1
 
 list1 = [12, 85, -47, 36, 59, -63, 20, -74, -29, 8, -91, 41, 77, -99, 3, 15, 68, 24, -50, 61, 59]
-#print((lambda x,y: [i for i in list1 if i%x==0 and i%y!=0])(int(input("Enter a number it should be divided by: ")), int(input("Enter a number it should not be divided by: "))))
+print((lambda x,y: [i for i in list1 if i%x==0 and i%y!=0])(int(input("Enter a number it should be divided by: ")), int(input("Enter a number it should not be divided by: "))))
 
 # #Task2
 listSC = [['cjwqg', 'byspkuq', 'dxm'], 
