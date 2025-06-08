@@ -1,7 +1,5 @@
 def skip():
-    for i in range(7):
-        print("-"*100)
-        print("\n")
+    print(''.join(("-"*100 + "\n") for i in range(7)))
 #Elementary level
 #Task 1
 
