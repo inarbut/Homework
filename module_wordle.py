@@ -21,10 +21,12 @@ def give_guesses_output(word, guess):
                 display[k]=(guess[k])
     return display
 
-def get_correct_guess(guess, len):
-    while len(guess)!=len: #added a while loop so that it doesnt decrease tries, because if we have a for loop and continue, it would decrease tries
-        print("Wrong length. Expected the length of", len)
-        guess = input(f"Attempt {i+1}/6 – Enter guess: ").lower()
-        if guess == "stop": #added it here in case a user wants to quit after he inputed wrong length
-            return "stop"
-    return guess
+def get_correct_guess(leng, attempt):
+    while True:
+        guess = input(f"Attempt {attempt}/6 – Enter guess: ").lower()
+        if guess == "stop":
+            return False
+        if len(guess) != leng:
+            print("Wrong length. Expected the length of", leng)
+            continue
+        return guess

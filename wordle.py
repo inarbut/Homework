@@ -10,29 +10,25 @@ def play():
     tries = 6
     secret_word_length = len(secret_word) #renamed wl to secret_word_length
 
-    print("Guess the",secret_word_length,"-letter word. You have", tries, "tries. Type stop to stop")
+    print("Guess the",secret_word_length,"-letter word. You have", tries, "tries. Type stop to quit")
 
-    won = False #variable to print if you won or no
-    for i in range(tries): #replaced a while loop with a for loop
-        guess = input(f"Attempt {i+1}/6 – Enter guess: ").lower() #replaced tries to i, to handle any amount of tries
+    for i in range(1, tries+1): #replaced a while loop with a for loop
 
-        guess = module_wordle.get_correct_guess(guess, secret_word_length, i+1)
+        guess = module_wordle.get_correct_guess(secret_word_length, i)
 
-        if guess == "stop": #added a global break to stop the entire program without keyboardInterruption
+        if not guess:
             return False
-        
 
         if guess==secret_word:
             print("You won!!!")
             return True
-
         
         display = module_wordle.give_guesses_output(secret_word, guess)
-
 
         #removed junk
         print("Result:", *display) #removed list comprehension as it already a list and no need for modification, replaced .join with * for clearer output 
     print("You lose! The word was:", secret_word)
+    return True
 
 while True:
     if not play():
