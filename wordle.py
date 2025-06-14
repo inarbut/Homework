@@ -15,20 +15,20 @@ def play():
 
         guess = module_wordle.get_correct_guess(secret_word_length, i)
 
-        if not guess:
+        if not guess: #if guess returns False, it also returns False to the global playing function
             return False
 
         if guess==secret_word:
             print("You won!!!")
             return True
         
-        display = module_wordle.give_guesses_output(secret_word, guess)
+        display = module_wordle.give_guesses_output(secret_word, guess) #returns a nice visual module with everything sorted out
 
         #removed junk
         print("Result:", *display) #removed list comprehension as it already a list and no need for modification, replaced .join with * for clearer output 
     print("You lose! The word was:", secret_word)
     return True
 
-while True:
-    if not play():
+while True: #main playing loop
+    if not play(): #if play() returns false it stops the loop
         break

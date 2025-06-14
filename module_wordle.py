@@ -25,7 +25,7 @@ def give_guesses_output(word, guess):
 
     for k in range(wordLength):
         if display[k] == '': #check if it hasnt been populated yet
-            if guess[k] in word and temp_dict[guess[k]] != 0: #check if this character was already added to display
+            if guess[k] in word and temp_dict[guess[k]] != 0: #check if this character wasnt already added to display
                 display[k]=(bcolors.WARNING + f"({guess[k]})" + bcolors.ENDC)
                 temp_dict[guess[k]]-=1
             else:
@@ -33,11 +33,11 @@ def give_guesses_output(word, guess):
     return display
 
 def get_correct_guess(leng, attempt):
-    while True:
-        guess = input(f"Attempt {attempt}/6 – Enter guess: ").lower()
+    while True: #it is used to handle the incorrect length properly
+        guess = input(f"Attempt {attempt}/6 – Enter guess: ").lower()#main guess function
         if guess == "stop":
             return False
-        if len(guess) != leng:
+        if len(guess) != leng: #checks if the length is correct
             print("Wrong length. Expected the length of", leng)
-            continue
+            continue #so it doesnt reach the final return guess line
         return guess
