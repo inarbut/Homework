@@ -2,7 +2,6 @@ import module_wordle #added an import
 
 print("Welcome to Wordle!") #moved it to the top to not to be printed every time
 
-
 def play():
     secret_word = module_wordle.give_random_word().lower() #called a function to get a random word from that module and also added .lower() in case the word is uppercase
     #removed x, y, z as there was no need for them
