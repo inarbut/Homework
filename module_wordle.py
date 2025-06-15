@@ -14,7 +14,7 @@ class bcolors: #this was pasted from the internet, it is used to give a better v
 def give_random_word():
     return r.choice(['apple','bread','candy','dream','eagle','flame','grape','house','input','joker'])
 
-def give_guesses_output(word, guess):
+def give_guesses_output(word, guess): #no error handling was added as the numbers that may be written are already converted to string and len correctly handles empty input
     wordLength = len(word)
     display = ['']*wordLength # creating a display which we will populate with characters and their parameters (correct/not)
     temp_dict = {k: word.count(k) for k in set(word)} #uhhh, yeah, I think it looks much cleaner than writing it all in sperarate lines. It is used so it marks the correct amount of letters
